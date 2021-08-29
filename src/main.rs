@@ -1,13 +1,15 @@
-extern crate hifitime;
-extern crate chrono;
+#![forbid(unsafe_code)]
+#![cfg_attr(not(debug_assertions), deny(warnings))] // Forbid warnings in release builds
+#![warn(clippy::all, rust_2018_idioms)]
 
-mod lst;
+use eframe::{egui};
 
+// When compiling natively:
+#[cfg(not(target_arch = "wasm32"))]
 fn main() {
-    let tls_lon = 1.4333;
-    let utc_string = lst::utc_str();
-    let jd_ut1 = lst::jd(&utc_string);
-    let gmst = lst::era(jd_ut1);
-    let tls_lst = lst::lst_at_lon(tls_lon, gmst);
-    lst::print_lst(tls_lst);
+    
+    let app = lst_gui::LstApp::default();
+    let mut native_options = eframe::NativeOptions::default();
+    native_options.initial_window_size = Some(egui::Vec2::new(300.0, 225.0));
+    eframe::run_native(Box::new(app), native_options);
 }
