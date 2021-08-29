@@ -4,8 +4,7 @@ Small utility app written in Rust computing your **LST** *(Local Sidereal Time)*
 
 **LST** is based on Earth's rotation with respect to the stars and not the sun *(hence a faster running clock)*.
 
-
-![capture](capture_tls.png "LST App")
+<img src="capture_tls.png" alt="capture" width="400"/>
 
 ## Algorithm
 - Get **UTC** time
@@ -29,4 +28,4 @@ Main steps are implemented under `src/app/lst.rs`.
 `rust` 
 `egui` 
 `chrono` 
-`hifitime` 
+`hifitime`
