@@ -7,6 +7,12 @@ Small utility app written in Rust computing your **LST** *(Local Sidereal Time)*
   <img width="400" src="capture_tls.png">
 </p>
 
+## How to use
+```
+gh repo clone alelouis/lst
+cargo run --release
+```
+
 ## Algorithm
 - Get **UTC** time
 - Compute Julian **UTC** Date (should be **UT1**)
