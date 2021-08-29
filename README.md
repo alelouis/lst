@@ -1,10 +1,11 @@
 # Local Sidereal Time
 
 Small utility app written in Rust computing your **LST** *(Local Sidereal Time)* at your longitude.  
-
 **LST** is based on Earth's rotation with respect to the stars and not the sun *(hence a faster running clock)*.
 
-<img src="capture_tls.png" alt="capture" width="400"/>
+<p align="center">
+  <img width="400" src="capture_tls.png">
+</p>
 
 ## Algorithm
 - Get **UTC** time
